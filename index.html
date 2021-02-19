@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>yoooo</title>
+    <style>
+      body {
+        background: #282a36;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100hv;
+        color: #f8f8f2;
+        text-align: center;
+        padding-top: 200px;
+        font-weight: bold;
+      }
+      #sodo {
+        border-right: 0.14em solid #ff79c6;
+        letter-spacing: 0.05em;
+        animation: dome 0.75s step-end infinite;
+      }
+      @keyframes dome {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #ff79c6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="sodo">Bonjour !</h1>
+    <script>
+      const titl = document.getElementById("sodo");
+      const text = "Good morning Momo Discret !";
+      let int = 0;
+      console.log(titl);
+      const randomSpeed = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+      };
+      const play = () => {
+        titl.innerHTML = text.slice(0, int);
+        int++;
+        if (int > text.length) {
+          int = 0;
+        }
+        clearInterval(timer);
+        timer = setInterval(play, randomSpeed(50, 300));
+      };
+      let timer = setInterval(play, 300);
+    </script>
+  </body>
+</html>
